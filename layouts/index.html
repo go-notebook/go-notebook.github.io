@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ .Site.Title }} — Go notebooks, compiled and reactive</title>
+<meta name="description" content="{{ .Site.Params.description }}">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+{{ partial "styles.html" . }}
+</head>
+<body class="lm">
+  <header class="nav"><div class="wrap">
+    <a class="brand" href="/"><img class="glyph" src="/img/logo.svg" width="32" height="32" alt="go-notebook logo"> {{ .Site.Title }}</a>
+    <nav><a href="#check">Example</a><a href="#features">Why</a><a href="#cells">Cells</a><a href="#repos">Repositories</a></nav>
+    {{ partial "theme-toggle.html" . }}
+  </div></header>
+  {{ partial "fork-ribbon.html" "https://github.com/go-notebook/notebook" }}
+
+  <div class="hero"><div class="wrap">
+    <div>
+      <h1 class="head">Go notebooks, compiled and reactive.<br><span class="accent">Native speed, kept values, a reproducible order.</span></h1>
+      <p class="sub">A <b>notebook is a Markdown file</b> whose <code>```go</code> blocks are cells. The kernel <b>compiles it</b> into a real Go program, <b>orders the cells by what they use</b> — worked out from the code itself, as marimo does for Python, not from the order you ran them in — and <b>runs only what changed</b>. A cell whose code and inputs did not change keeps its result, and its values are handed over instead of being computed again, across rebuilds and across runs.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://go-notebook.github.io/docs/">{{ partial "icons/book.html" . }}Read the documentation →</a>
+      </div>
+      <div class="trust"><span><b>{{ len .Site.Params.rules }}</b> cell rules, checked from the syntax</span><span><b>.md</b> diffs are diffs of text</span><span><b>100%</b> test coverage</span></div>
+    </div>
+    {{/* The example notebook of go-notebook/notebook's README, verbatim. */}}
+    <div class="term">
+      <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="t">spectrum.md</span></div>
+<pre><span class="c-com"># Spectrum</span>
+
+<span class="c-com">```go</span>
+<span class="c-cmd">import</span> <span class="c-str">"math"</span>
+
+n := 1_000_000
+<span class="c-com">```</span>
+
+The sum below runs once; editing the last cell does not run it again.
+
+<span class="c-com">```go</span>
+sum := 0.0
+<span class="c-cmd">for</span> i := 1; i &lt;= n; i++ {
+	sum += 1 / float64(i*i)
+}
+<span class="c-com">```</span>
+
+<span class="c-com">```go</span>
+math.Sqrt(6 * sum)
+<span class="c-com">```</span></pre>
+    </div>
+  </div></div>
+
+  <div class="strip"><div class="wrap">
+    <span class="lead-line">{{ len .Site.Params.repos }} repositories — <b>one command</b>: <code>notebook run</code>, <code>html</code>, <code>watch</code>, <code>serve</code></span>
+    <div class="mods">{{ range .Site.Params.repos }}<a href="{{ .href }}">{{ .name }}</a>{{ end }}</div>
+  </div></div>
+
+  <section id="check" style="padding-top:10px"><div class="wrap">
+    <span class="eyebrow">Ask it, do not take our word</span>
+    <h2>The notebook above, <i>actually run</i> — twice.</h2>
+    <p class="lead">The first run compiles the notebook and runs every cell. Then the last cell is changed to <code>math.Pi - math.Sqrt(6*sum)</code> and the notebook is run again, as a <b>new process</b>: the first two cells are <b>kept</b>, and <code>sum</code> comes back from the kernel's store instead of being summed again. The output below is a real run, with nothing edited.</p>
+    <div class="term" style="margin-top:22px">
+      <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="t">notebook run spectrum.md — zsh</span></div>
+{{/* Verbatim: `notebook run` built from go-notebook/notebook at main
+     fd7f8c1 (no release is tagged yet), on an Apple M4 Max (arm64),
+     2026-10-10. Re-run it and paste its output when the command changes;
+     never retype a value here. */}}
+<pre style="white-space:pre;overflow-x:auto"><span class="c-cmd">$ notebook run</span> spectrum.md
+<span class="c-out">── cell 0 (line 4, ran in 12µs)
+── cell 1 (line 12, ran in 2.663ms)
+── cell 2 (line 19, ran in 36µs)
+   3.1415916986605086</span>
+<span class="c-com"># change the last cell to math.Pi - math.Sqrt(6*sum), then:</span>
+<span class="c-cmd">$ notebook run</span> spectrum.md
+<span class="c-out">── cell 0 (line 4, kept)
+── cell 1 (line 12, kept)
+── cell 2 (line 19, ran in 42µs)
+   9.54929284535666e-07</span></pre>
+    </div>
+  </div></section>
+
+  <section id="features"><div class="wrap">
+    <span class="eyebrow">Why go-notebook</span>
+    <h2>Speed, kept values and order — <i>together</i>.</h2>
+    <p class="lead">Jupyter runs Python in an interpreter, with hidden mutable state, in whatever order the cells were clicked. gophernotes interprets Go. GoNB compiles, but keeps only declarations: <b>values are computed again on every run</b>. marimo orders cells from the code, but interprets Python. None has native speed, kept values and a reproducible order together; go-notebook is built to have all three.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">📝</div><h3>A notebook is Markdown</h3><p>Prose is kept byte for byte (<code>format.Parse(src).String() == src</code>, fuzzed). GitHub shows a notebook as a document, a diff is a diff of text, and no output is ever written into the file.</p></div>
+      <div class="card"><div class="ico">⚙️</div><h3>Compiled, native speed</h3><p>The kernel compiles the notebook into a worker process. Go's build cache makes a rebuild after a one-cell edit cost about a tenth of a second.</p></div>
+      <div class="card"><div class="ico">🧭</div><h3>Order from the code</h3><p>Each cell's definitions and free identifiers come from the parse alone, so the graph works on code that does not compile yet. Cycles, double definitions and foreign assignments are errors.</p></div>
+      <div class="card"><div class="ico">♻️</div><h3>Kept values</h3><p>A cell's key hashes its source, the packages it refers to and the keys of the cells it reads. An unchanged key keeps its result; after a rebuild its variables are handed to the new worker. Moving cells runs nothing.</p></div>
+      <div class="card"><div class="ico">💾</div><h3>On disk, across runs</h3><p>Results and values are kept in the work directory, so a new kernel, or the next <code>notebook run</code>, starts where the last one stopped.</p></div>
+      <div class="card"><div class="ico">📄</div><h3>A page with no scripts</h3><p><code>notebook html</code> writes a standalone page: no scripts, no external resources, raw HTML in the prose left out. A page made from someone else's notebook runs nothing of theirs.</p></div>
+      <div class="card"><div class="ico">✅</div><h3>100% test coverage</h3><p>Gated in CI on Linux, macOS and Windows.</p></div>
+      <div class="card"><div class="ico">⚖️</div><h3>BSD-3-Clause</h3><p>Every repository of the organization.</p></div>
+    </div>
+  </div></section>
+
+  <section id="cells" style="padding-top:10px"><div class="wrap">
+    <span class="eyebrow">The cell rules</span>
+    <h2>{{ len .Site.Params.rules }} rules make the order <i>a function of the code</i>.</h2>
+    <div class="grid">
+      {{ range .Site.Params.rules }}
+      <div class="card"><h3>{{ .name }}</h3><p>{{ .what | markdownify }}</p></div>
+      {{ end }}
+    </div>
+  </div></section>
+
+  <section id="repos" style="padding-top:20px"><div class="wrap">
+    <span class="eyebrow">Repositories</span>
+    <h2>What is here.</h2>
+    <div class="road">
+      {{ range .Site.Params.repos }}
+      <div class="ph">
+        <div class="top"><h4><a href="{{ .href }}">{{ .name }}</a></h4><span class="tag active">{{ .kind }}</span></div>
+        <p>{{ .blurb | safeHTML }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div></section>
+
+  <section id="eco" style="padding-top:6px"><div class="wrap">
+    <div class="band">
+      <h2>Notebooks for the Go scientific stack.</h2>
+      <p>go-notebook is part of an ecosystem with <a href="https://github.com/go-ndarray/ndarray"><u>go-ndarray</u></a> (NumPy-style arrays) and <a href="https://github.com/go-fft/fft"><u>go-fft</u></a> (<code>numpy.fft</code>). What is not done yet — a Jupyter front end, concurrent branches, LaTeX in prose — is listed in the <a href="https://go-notebook.github.io/docs/"><u>documentation</u></a>.</p>
+      <a class="btn btn-ghost" href="https://github.com/go-notebook/notebook">{{ partial "icons/github.html" . }}Read the source on GitHub →</a>
+    </div>
+  </div></section>
+
+  <footer><div class="wrap"><span>go-notebook · <a href="https://github.com/go-notebook">go-notebook on GitHub</a> · BSD-3-Clause</span><span>Markdown in · native Go out</span></div></footer>
+</body>
+</html>
