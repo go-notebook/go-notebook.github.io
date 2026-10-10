@@ -20,7 +20,7 @@ disableKinds = ['taxonomy', 'term', 'rss', 'sitemap', '404']
   name  = "notebook"
   kind  = "kernel · command"
   href  = "https://github.com/go-notebook/notebook"
-  blurb = "The kernel, the <code>notebook</code> command (<code>run</code>, <code>html</code>, <code>watch</code>) and the HTML export: <code>format</code> parses the Markdown, <code>analysis</code> builds the dependency graph from the syntax, <code>gen</code> writes the Go program, <code>kernel</code> compiles and drives it through <code>runtime</code> and keeps results and values, <code>export</code> writes the page."
+  blurb = "The kernel, the <code>notebook</code> command (<code>run</code>, <code>html</code>, <code>watch</code>, <code>serve</code>) and the HTML export: <code>format</code> parses the Markdown, <code>analysis</code> builds the dependency graph from the syntax, <code>gen</code> writes the Go program, <code>kernel</code> compiles and drives it through <code>runtime</code> and keeps results and values, <code>export</code> writes the page."
 [[params.repos]]
   name  = "docs"
   kind  = "site"
