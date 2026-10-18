@@ -22,6 +22,11 @@ disableKinds = ['taxonomy', 'term', 'rss', 'sitemap', '404']
   href  = "https://github.com/go-notebook/notebook"
   blurb = "The kernel, the <code>notebook</code> command (<code>run</code>, <code>html</code>, <code>watch</code>, <code>serve</code>) and the HTML export: <code>format</code> parses the Markdown, <code>analysis</code> builds the dependency graph from the syntax, <code>gen</code> writes the Go program, <code>kernel</code> compiles and drives it through <code>runtime</code> and keeps results and values, <code>export</code> writes the page."
 [[params.repos]]
+  name  = "playground"
+  kind  = "wasm · page"
+  href  = "https://github.com/go-notebook/playground"
+  blurb = "<strong>A notebook in the browser, with no server.</strong> The page shows the prose as text and each cell as an editor; Ctrl+Enter runs the whole notebook again in the tab. A Go interpreter (<a href=\"https://github.com/traefik/yaegi\">yaegi</a>) compiled to WebAssembly runs the cells, while the libraries they import — go-statistics, go-numerics, go-ndarray, go-plot — run <em>compiled</em>: only the notebook's own code is interpreted. Each run posts the whole notebook to a Web Worker and gets every cell's results back, one call in and one string out, so a long run neither freezes the page nor costs a call per widget. Nothing reaches the network or a file system. Deployed as <code>/playground/</code> on <a href=\"https://go-statistics.github.io/playground/\">go-statistics</a> and <a href=\"https://go-numerics.github.io/playground/\">go-numerics</a>."
+[[params.repos]]
   name  = "docs"
   kind  = "site"
   href  = "https://go-notebook.github.io/docs/"
