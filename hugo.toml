@@ -12,7 +12,7 @@ disableKinds = ['taxonomy', 'term', 'rss', 'sitemap', '404']
   unsafe = true
 
 [params]
-  description = "go-notebook: Go notebooks with native speed, kept values and a reproducible order. A notebook is a Markdown file whose go blocks are cells; the kernel compiles it, orders the cells by what they use, and runs only what changed."
+  description = "go-notebook: Go notebooks with native speed, kept values and a reproducible order. A notebook is a Markdown file whose go blocks (and ruby blocks, on a pure-Go Ruby) are cells; the kernel compiles it, orders the cells by what they use, and runs only what changed."
 
 # Every field below is rendered by layouts/index.html (cards in #repos, the
 # strip under the hero). A field nothing renders does not stay true.
@@ -20,7 +20,7 @@ disableKinds = ['taxonomy', 'term', 'rss', 'sitemap', '404']
   name  = "notebook"
   kind  = "kernel · command"
   href  = "https://github.com/go-notebook/notebook"
-  blurb = "The kernel, the <code>notebook</code> command (<code>run</code>, <code>html</code>, <code>watch</code>, <code>serve</code>) and the HTML export: <code>format</code> parses the Markdown, <code>analysis</code> builds the dependency graph from the syntax, <code>gen</code> writes the Go program, <code>kernel</code> compiles and drives it through <code>runtime</code> and keeps results and values, <code>export</code> writes the page."
+  blurb = "The kernel, the <code>notebook</code> command (<code>run</code>, <code>html</code>, <code>watch</code>, <code>serve</code>) and the HTML export: <code>format</code> parses the Markdown, <code>analysis</code> builds the dependency graph from the syntax, <code>gen</code> writes the Go program, <code>kernel</code> compiles and drives it through <code>runtime</code> and keeps results and values, <code>export</code> writes the page. <strong>Ruby cells</strong> (<code>```ruby</code>) run on <a href=\"https://github.com/go-embedded-ruby/ruby\">rbgo</a>, a Ruby written in Go, with the <a href=\"https://github.com/go-scikit/ruby\">go-scikit bindings</a> (<code>Stats</code>, <code>Special</code>, <code>Optimize</code>, <code>Integrate</code>, <code>DataFrame</code>, <code>Plot</code>, <code>NDArray</code>), and share their variables with the Go cells. <code>-timeout</code> and <code>-memory</code> stop a runaway cell in either language."
 [[params.repos]]
   name  = "playground"
   kind  = "wasm · page"
@@ -54,6 +54,9 @@ disableKinds = ['taxonomy', 'term', 'rss', 'sitemap', '404']
 [[params.rules]]
   name = "The final expression is shown"
   what = "A value with a `Display() map[string][]byte` method shows itself as HTML, SVG or PNG; anything else shows its `%v`."
+[[params.rules]]
+  name = "Ruby cells join the same graph"
+  what = "A `ruby` block runs on rbgo with the go-scikit bindings. A Go variable a Ruby cell reads becomes a Ruby local; a Ruby local a Go cell reads becomes a Go variable typed from its value (a Float is a `float64`, an NDArray the same `*ndarray.Array`). Caching and re-runs cross the two languages."
 [[params.rules]]
   name = "Errors name the notebook's lines"
   what = "`//line` directives point every generated line back into the `.md`. A panic stops the cells that read the failing one, and they say why."
