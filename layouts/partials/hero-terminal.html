@@ -1,0 +1,25 @@
+{{- /* The example notebook of go-notebook/notebook's README, verbatim. The
+     hero carousel's first card (terminal = true). */ -}}
+<div class="term">
+      <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="t">spectrum.md</span></div>
+<pre><span class="c-com"># Spectrum</span>
+
+<span class="c-com">```go</span>
+<span class="c-cmd">import</span> <span class="c-str">"math"</span>
+
+n := 1_000_000
+<span class="c-com">```</span>
+
+The sum below runs once; editing the last cell does not run it again.
+
+<span class="c-com">```go</span>
+sum := 0.0
+<span class="c-cmd">for</span> i := 1; i &lt;= n; i++ {
+	sum += 1 / float64(i*i)
+}
+<span class="c-com">```</span>
+
+<span class="c-com">```go</span>
+math.Sqrt(6 * sum)
+<span class="c-com">```</span></pre>
+    </div>

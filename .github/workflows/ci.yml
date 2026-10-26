@@ -14,16 +14,69 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      # Hugo resolves the landingkit module (hugo.toml [module]) with the go
+      # command, at the version go.mod pins.
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+          cache: false
       - uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "0.168.0"
           extended: true
-      - run: hugo --minify
+      # Not minified: the checks below read attributes as written, quotes
+      # included (the minifier drops the quotes of href=/playground/).
+      - run: hugo
       # A page that builds and says nothing is a page nobody notices is empty.
       - name: every repository is on it
         run: |
-          for repo in notebook docs brand; do
+          for repo in notebook playground docs brand; do
             grep -q "go-notebook/$repo" public/index.html \
               || { echo "::error::$repo is not on the page"; exit 1; }
           done
           echo "the page names every repository this org has"
+      # The red button leads to the playground, and the hero is a carousel
+      # whose second card is the Ruby notebook with what it printed.
+      - name: the red button, and the carousel's cards
+        run: |
+          for want in 'class="btn btn-try" href="/playground/"' 'aria-roledescription="carousel"' \
+                      'waits.md — Go and Ruby cells' '$ notebook run waits.md' 'href="/playground/"'; do
+            grep -qF -- "$want" public/index.html || { echo "::error::$want is not on the page"; exit 1; }
+          done
+          echo "the button and the cards are on the page"
+
+  # The hero's Ruby card shows example/waits.md and, under it,
+  # example/output.txt: what running it printed. This runs the notebook
+  # again, with the released notebook command and the library versions
+  # example/go.mod pins, and fails if the output differs. Timings ("ran in
+  # 41µs") and the "kept" marker of a cached cell are removed first by
+  # example/stable (a Go program, tested): they are the only parts that
+  # change from run to run. The notebook prints rounded numbers, so the
+  # output does not depend on the architecture's floating-point fusion.
+  notebook:
+    name: the notebook prints what the page says
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: example/go.mod
+          cache-dependency-path: example/go.sum
+      - name: The filter is tested
+        working-directory: example
+        env:
+          GOWORK: "off"
+        run: go test ./stable
+      - name: Run the notebook
+        working-directory: example
+        env:
+          GOWORK: "off"
+        run: |
+          go tool notebook run waits.md > "$RUNNER_TEMP/out.raw"
+          go run ./stable < "$RUNNER_TEMP/out.raw" > output.txt
+      - name: The committed output is the one printed
+        run: |
+          if ! git diff --exit-code -- example/output.txt; then
+            echo "::error::example/output.txt differs from what waits.md prints: run it again (see README) and commit the output"
+            exit 1
+          fi

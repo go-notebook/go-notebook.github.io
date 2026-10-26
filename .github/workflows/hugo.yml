@@ -33,7 +33,8 @@ env:
   # Pin Hugo so site builds don't break when a new release ships
   # incompatible template changes. Bump deliberately, not by
   # surprise.
-  HUGO_VERSION: 0.135.0
+  # The same version as the ci workflow's build.
+  HUGO_VERSION: 0.168.0
 
 jobs:
   build:
@@ -49,6 +50,12 @@ jobs:
         with:
           submodules: recursive
 
+      # Hugo resolves the landingkit module (hugo.toml [module]) with the go
+      # command, at the version go.mod pins.
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+          cache: false
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v6
@@ -62,6 +69,28 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      # The playground: the page, its example notebooks and the WebAssembly
+      # cores (Go, and Go with Ruby), built here from the
+      # go-notebook/playground version that playground/go.mod pins (never a
+      # committed binary). The build runs every notebook first and fails if a
+      # cell fails.
+      - name: Setup Go
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: playground/go.mod
+          cache-dependency-path: playground/go.sum
+
+      - name: Build the playground
+        working-directory: playground
+        env:
+          GOWORK: "off"
+        run: |
+          go run github.com/go-notebook/playground/cmd/build \
+            -o ../public/playground --org go-notebook --home "${{ steps.pages.outputs.base_url }}/" \
+            --accent '#047857' --accent-dark '#34d399' \
+            --libraries 'go-ndarray, go-plot, go-statistics, go-numerics and the go-scikit Ruby bindings' \
+            notebooks/*.md
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
