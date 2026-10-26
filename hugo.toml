@@ -1,18 +1,39 @@
 baseURL = 'https://go-notebook.github.io/'
 locale  = 'en-us'
 title   = 'go-notebook'
-# No theme -- the layout is the go-* family template (go-fileshare.github.io's,
-# via logos/landing-kit, as go-fft and go-ndarray use it): one self-contained
-# layouts/index.html, partials/styles.html (the shared sheet, byte-identical)
-# and partials/theme-toggle.html (system / light / dark).
+# No theme -- the layout is the go-* family template: one self-contained
+# layouts/index.html, with the shared partials (styles, theme toggle, fork
+# ribbon, icons, hero carousel, red button) from the landing kit.
 
 disableKinds = ['taxonomy', 'term', 'rss', 'sitemap', '404']
+
+# The design comes from the landing kit, a Hugo module pinned in go.mod.
+[module]
+  [[module.imports]]
+    path = "github.com/go-fleettools/landingkit"
 
 [markup.goldmark.renderer]
   unsafe = true
 
 [params]
   description = "go-notebook: Go notebooks with native speed, kept values and a reproducible order. A notebook is a Markdown file whose go blocks (and ruby blocks, on a pure-Go Ruby) are cells; the kernel compiles it, orders the cells by what they use, and runs only what changed."
+
+# The hero's carousel (the landing kit's hero-carousel.html). The first card
+# is layouts/partials/hero-terminal.html, the second hero-terminal-ruby.html:
+# example/waits.md and what running it printed, checked by the ci workflow.
+[params.hero]
+  label = "go-notebook in examples"
+[[params.hero.cards]]
+  terminal = true
+  title = "A Go notebook"
+[[params.hero.cards]]
+  terminal = "ruby"
+  title = "Go and Ruby cells, and what they printed"
+[[params.hero.cards]]
+  title = "Try it in your browser"
+  text = "The playground runs notebooks, Go and Ruby cells, in WebAssembly in the tab: edit a cell, press Ctrl+Enter, see the result."
+  href = "/playground/"
+  more = "Open the playground"
 
 # Every field below is rendered by layouts/index.html (cards in #repos, the
 # strip under the hero). A field nothing renders does not stay true.
@@ -25,7 +46,7 @@ disableKinds = ['taxonomy', 'term', 'rss', 'sitemap', '404']
   name  = "playground"
   kind  = "wasm · page"
   href  = "https://github.com/go-notebook/playground"
-  blurb = "<strong>A notebook in the browser, with no server.</strong> The page shows the prose as text and each cell as an editor; Ctrl+Enter runs the whole notebook again in the tab. A Go interpreter (<a href=\"https://github.com/traefik/yaegi\">yaegi</a>) compiled to WebAssembly runs the cells, while the libraries they import — go-statistics, go-numerics, go-ndarray, go-plot — run <em>compiled</em>: only the notebook's own code is interpreted. Each run posts the whole notebook to a Web Worker and gets every cell's results back, one call in and one string out, so a long run neither freezes the page nor costs a call per widget. <strong>Ruby cells</strong> run there too, in <a href=\"https://github.com/go-embedded-ruby/ruby\">rbgo</a> with the go-scikit bindings: the page fetches the Ruby core only when the notebook has a Ruby cell. Nothing reaches the network or a file system, and every figure goes through an allowlist SVG sanitizer. Deployed as <code>/playground/</code> on <a href=\"https://go-statistics.github.io/playground/\">go-statistics</a> and <a href=\"https://go-numerics.github.io/playground/\">go-numerics</a>."
+  blurb = "<strong>A notebook in the browser, with no server.</strong> The page shows the prose as text and each cell as an editor; Ctrl+Enter runs the whole notebook again in the tab. A Go interpreter (<a href=\"https://github.com/traefik/yaegi\">yaegi</a>) compiled to WebAssembly runs the cells, while the libraries they import — go-statistics, go-numerics, go-ndarray, go-plot — run <em>compiled</em>: only the notebook's own code is interpreted. Each run posts the whole notebook to a Web Worker and gets every cell's results back, one call in and one string out, so a long run neither freezes the page nor costs a call per widget. <strong>Ruby cells</strong> run there too, in <a href=\"https://github.com/go-embedded-ruby/ruby\">rbgo</a> with the go-scikit bindings: the page fetches the Ruby core only when the notebook has a Ruby cell. Nothing reaches the network or a file system, and every figure goes through an allowlist SVG sanitizer. Deployed as <code>/playground/</code> <a href=\"/playground/\">here</a>, with notebooks about the notebook itself, and on <a href=\"https://go-statistics.github.io/playground/\">go-statistics</a> and <a href=\"https://go-numerics.github.io/playground/\">go-numerics</a>."
 [[params.repos]]
   name  = "docs"
   kind  = "site"

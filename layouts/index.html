@@ -7,11 +7,12 @@
 <meta name="description" content="{{ .Site.Params.description }}">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 {{ partial "styles.html" . }}
+{{ partial "btn-try-style.html" . }}
 </head>
 <body class="lm">
   <header class="nav"><div class="wrap">
     <a class="brand" href="/"><img class="glyph" src="/img/logo.svg" width="32" height="32" alt="go-notebook logo"> {{ .Site.Title }}</a>
-    <nav><a href="#check">Example</a><a href="#features">Why</a><a href="#cells">Cells</a><a href="#repos">Repositories</a></nav>
+    <nav><a href="#check">Example</a><a href="#features">Why</a><a href="#cells">Cells</a><a href="#repos">Repositories</a><a href="/playground/">Playground</a></nav>
     {{ partial "theme-toggle.html" . }}
   </div></header>
   {{ partial "fork-ribbon.html" "https://github.com/go-notebook/notebook" }}
@@ -22,33 +23,14 @@
       <p class="sub">A <b>notebook is a Markdown file</b> whose <code>```go</code> blocks are cells. The kernel <b>compiles it</b> into a real Go program, <b>orders the cells by what they use</b> — worked out from the code itself, as marimo does for Python, not from the order you ran them in — and <b>runs only what changed</b>. A cell whose code and inputs did not change keeps its result, and its values are handed over instead of being computed again, across rebuilds and across runs.</p>
       <div class="cta">
         <a class="btn btn-primary" href="https://go-notebook.github.io/docs/">{{ partial "icons/book.html" . }}Read the documentation →</a>
+        <a class="btn btn-try" href="/playground/">{{ partial "icons/browser.html" . }}Try it in your browser</a>
       </div>
       <div class="trust"><span><b>{{ len .Site.Params.rules }}</b> cell rules, checked from the syntax</span><span><b>.md</b> diffs are diffs of text</span><span><b>100%</b> test coverage</span></div>
     </div>
-    {{/* The example notebook of go-notebook/notebook's README, verbatim. */}}
-    <div class="term">
-      <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="t">spectrum.md</span></div>
-<pre><span class="c-com"># Spectrum</span>
-
-<span class="c-com">```go</span>
-<span class="c-cmd">import</span> <span class="c-str">"math"</span>
-
-n := 1_000_000
-<span class="c-com">```</span>
-
-The sum below runs once; editing the last cell does not run it again.
-
-<span class="c-com">```go</span>
-sum := 0.0
-<span class="c-cmd">for</span> i := 1; i &lt;= n; i++ {
-	sum += 1 / float64(i*i)
-}
-<span class="c-com">```</span>
-
-<span class="c-com">```go</span>
-math.Sqrt(6 * sum)
-<span class="c-com">```</span></pre>
-    </div>
+    {{/* The hero's cards, [params.hero] in hugo.toml: the README's notebook
+         (hero-terminal.html), a notebook with a Ruby cell and what it printed
+         (hero-terminal-ruby.html), and the playground. */}}
+    <div style="min-width:0">{{ partial "hero-carousel.html" . }}</div>
   </div></div>
 
   <div class="strip"><div class="wrap">
@@ -92,7 +74,7 @@ math.Sqrt(6 * sum)
       <div class="card"><div class="ico">💾</div><h3>On disk, across runs</h3><p>Results and values are kept in the work directory, so a new kernel, or the next <code>notebook run</code>, starts where the last one stopped.</p></div>
       <div class="card"><div class="ico">📄</div><h3>A page with no scripts</h3><p><code>notebook html</code> writes a standalone page: no scripts, no external resources, raw HTML in the prose left out. A page made from someone else's notebook runs nothing of theirs.</p></div>
       <div class="card"><div class="ico">✅</div><h3>100% test coverage</h3><p>Gated in CI on Linux, macOS and Windows.</p></div>
-      <div class="card"><div class="ico">⚖️</div><h3>BSD-3-Clause</h3><p>Every repository of the organization.</p></div>
+      <div class="card"><div class="ico">🌐</div><h3>In your browser</h3><p>The <a href="/playground/"><u>playground</u></a> runs notebooks, Go and Ruby cells, in WebAssembly in the tab: no server, no install.</p></div>
     </div>
   </div></section>
 
@@ -127,6 +109,6 @@ math.Sqrt(6 * sum)
     </div>
   </div></section>
 
-  <footer><div class="wrap"><span>go-notebook · <a href="https://github.com/go-notebook">go-notebook on GitHub</a> · BSD-3-Clause</span><span>Markdown in · native Go out</span></div></footer>
+  <footer><div class="wrap"><span>go-notebook · <a href="https://github.com/go-notebook">go-notebook on GitHub</a>{{ if not (partial "mantra-on.html" $) }} · BSD-3-Clause{{ end }}</span><span>Markdown in · native Go out</span></div></footer>
 </body>
 </html>
