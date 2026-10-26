@@ -10,7 +10,9 @@ and the fleet's [landing kit](https://github.com/go-fleettools/landingkit)
   [go-notebook/playground](https://github.com/go-notebook/playground)'s
   `cmd/build`, at the version `playground/go.mod` pins, from the notebooks in
   `playground/notebooks/` (it runs each one first and fails if a cell fails).
-  The red "Try it in your browser" button in the hero leads there.
+  The red "Try it in your browser" button in the hero leads there. While its
+  first WebAssembly core downloads, the page shows what go-notebook does: the
+  landing kit's loading carousel (playground v0.3.0), never on a cached load.
 - **The hero** is the kit's carousel: the README's notebook
   (`layouts/partials/hero-terminal.html`), a notebook with a Ruby cell and
   what it printed (`hero-terminal-ruby.html`), and the playground.
