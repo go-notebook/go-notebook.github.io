@@ -266,6 +266,8 @@ github.com/go-notebook/playground v0.2.1 h1:q2ItzoXZqHNG+C8YbAmJ79BXGiwkM3KJQhqE
 github.com/go-notebook/playground v0.2.1/go.mod h1:BIMwwHnco6lCH6NWnbi8DmREH3QHbYbCPmxdAhlfxrI=
 github.com/go-notebook/playground v0.3.0 h1:ApGCPVywnitpJGLPBggi1DAqfx/40oYjzjv0EM6UiyM=
 github.com/go-notebook/playground v0.3.0/go.mod h1:nDSdAlmPcsC6KJ9elXz/i0VfmQ8iZVtIA4LYDTtzww8=
+github.com/go-notebook/playground v0.4.0 h1:vvxsqCHqQVCtXeWPy5I8XWh3NE+60ZW+2hqrRpC0zEs=
+github.com/go-notebook/playground v0.4.0/go.mod h1:nDSdAlmPcsC6KJ9elXz/i0VfmQ8iZVtIA4LYDTtzww8=
 github.com/go-numerics/integrate v0.2.0 h1:IkJhDimTc7nQETCixEvbbHhtOF36GbANBKJI3mJB3Kw=
 github.com/go-numerics/integrate v0.2.0/go.mod h1:ABjpcWy8ZSOg8j6S+7YRsvMJ2LpVkH4E64/CGet2gCw=
 github.com/go-numerics/optimize v0.2.0 h1:7OO7HlQBCzT4hIMsgmI7T1PQveUwoQJ70xBP84aN7dc=
@@ -566,6 +568,7 @@ github.com/go-ruby-rexml/rexml v0.0.0-20260916101905-c8e846bf8b6e h1:PwZ1F6Ia1XU
 github.com/go-ruby-rexml/rexml v0.0.0-20260916101905-c8e846bf8b6e/go.mod h1:UQGki9qXLiqaEOm4ih1CGznGNPUDcNGCsLVJ/y6G1G8=
 github.com/go-ruby-roda/roda v0.0.0-20260923204143-337fa1a774a7 h1:BbbGOO08zNtuSd8RLnTe2Fbx+ysn1J0YRwOxifHWw2s=
 github.com/go-ruby-roda/roda v0.0.0-20260923204143-337fa1a774a7/go.mod h1:D3LD6F4NDzg81cFXXcSpNrMILVf/e1KnxC+PA/QuCgs=
+github.com/go-ruby-roda/roda v0.0.0-20261027105846-ceed5c054ab7/go.mod h1:XJJCGPKT3W0er/eMzhVaEGIO27HbrUIhriH2Aa5RFmU=
 github.com/go-ruby-rolify/rolify v0.0.0-20260717073459-4d2e717bab13 h1:+1fDlQuVxjjsjGctjPl7pZq9rbN7QRUBTgwAyvwZvsU=
 github.com/go-ruby-rolify/rolify v0.0.0-20260717073459-4d2e717bab13/go.mod h1:4dqBKwZf+wvpwA+2Eh+2Ow51YS6ma937wYJEZ1otLcE=
 github.com/go-ruby-rqrcode/rqrcode v0.0.0-20260916102108-c0062622e02f h1:ATyJLCTrLGIy9nGCHG10yYO01ZZOb+pQxKlTTFU46tg=
@@ -576,6 +579,7 @@ github.com/go-ruby-rss/rss v0.0.0-20260923204152-16e2242a2336 h1:1DIDK6OLYSKVFTE
 github.com/go-ruby-rss/rss v0.0.0-20260923204152-16e2242a2336/go.mod h1:zjFoQB1Tlt2ffTMKm88uwp/mR7oYTt7lxNkmLsjtF5c=
 github.com/go-ruby-rubocop/rubocop v0.0.0-20261001114457-ff08439ed26a h1:2+6KDea5HHSH99pjNib7zRPevXGlKZ1kpkZ+sTtWhyI=
 github.com/go-ruby-rubocop/rubocop v0.0.0-20261001114457-ff08439ed26a/go.mod h1:Pqzce62DYUMRWABwyRAIxg50GLd4JIBgQY1zxxSG8JY=
+github.com/go-ruby-rubocop/rubocop v0.0.0-20261027110214-1e3b41167fcb/go.mod h1:fAoQYEZZqeldO/MXhozUSf6GmpdNOC61C1Rvt7a6rjE=
 github.com/go-ruby-rubygems/rubygems v0.0.0-20260916102314-9bd0bf6a00e5 h1:JnnWSLv/hr2dPp/I7IlvxmMKdZ/znoq0GsnE18Grnvs=
 github.com/go-ruby-rubygems/rubygems v0.0.0-20260916102314-9bd0bf6a00e5/go.mod h1:NuLiHni0BIuZk9tJvpfcqNgaSnFtH+wylUrz/tX9Vgo=
 github.com/go-ruby-saml/saml v0.0.0-20260925100912-118142122e06 h1:WKsOTM/gZya1agE02Z9hl4cnCBJZEF1nCGZbESD6ciM=
@@ -602,6 +606,7 @@ github.com/go-ruby-sinatra/sinatra v0.0.0-20260923204248-301a06b96ca0 h1:fWlFn8V
 github.com/go-ruby-sinatra/sinatra v0.0.0-20260923204248-301a06b96ca0/go.mod h1:SkmmvxVArC0uaRey0s3WmydG5cUJe5b2mxtQ3A2qhDw=
 github.com/go-ruby-slim/slim v0.0.0-20260916102940-76e23809c696 h1:qWaRnip/3lnU/F6ZPX8qmn7HRwGHnk5xaflCN9XzftU=
 github.com/go-ruby-slim/slim v0.0.0-20260916102940-76e23809c696/go.mod h1:+y2RCJmyKesyDRfmIlOSHFbBzTgEIpch7rqkFqPunAw=
+github.com/go-ruby-slim/slim v0.0.0-20261027111030-834d1fa0a20d/go.mod h1:4JayyrutmSDIqV7uCKjvnBODLWbXJJSIIAOgSv3Ab6I=
 github.com/go-ruby-sodium/sodium v0.0.0-20260910094952-712708ed6e8d h1:WSd/cg1swqmApWQSjLLE9uTfocFyrm5IfZD4bImAieY=
 github.com/go-ruby-sodium/sodium v0.0.0-20260910094952-712708ed6e8d/go.mod h1:dRS1KD9eSNqEhVK0prIVG/ddEy7yOoBsRQCD/fHWLKg=
 github.com/go-ruby-sqlite3/sqlite3 v0.0.0-20260930114044-3861a7b679bd h1:HYJTSG6DVewPTdGCjEb87+Rtiy6KmCwrFZZ2LzSXc5U=
