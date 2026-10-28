@@ -2,7 +2,7 @@ module github.com/go-notebook/go-notebook.github.io/playground
 
 go 1.27.3
 
-require github.com/go-notebook/playground v0.5.0
+require github.com/go-notebook/playground v0.6.0
 
 require (
 	filippo.io/age v1.3.2 // indirect
