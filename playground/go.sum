@@ -264,6 +264,8 @@ github.com/go-notebook/notebook v0.6.0 h1:RE5dMe3ns1zkZVHShNgDz4XSh+ryi6+0aAkXS6
 github.com/go-notebook/notebook v0.6.0/go.mod h1:w4MrkEKTNTweU5keq8T5CpARXRkCB8zAHiEP+KTJkbA=
 github.com/go-notebook/playground v0.5.0 h1:DnybL8Y5d1N7LSAmJK6feM188yLMfIIrpeuGp6Mkt2k=
 github.com/go-notebook/playground v0.5.0/go.mod h1:T9uhspsOW4PdWP8BkX5KLQVj0BbPKqebxwdPUw4qf4g=
+github.com/go-notebook/playground v0.6.0 h1:y2r7zFBY2CfHj94K1MlWKx3q+LwDV40Ney1t0WVtPMg=
+github.com/go-notebook/playground v0.6.0/go.mod h1:T9uhspsOW4PdWP8BkX5KLQVj0BbPKqebxwdPUw4qf4g=
 github.com/go-numerics/integrate v0.2.0 h1:IkJhDimTc7nQETCixEvbbHhtOF36GbANBKJI3mJB3Kw=
 github.com/go-numerics/integrate v0.2.0/go.mod h1:ABjpcWy8ZSOg8j6S+7YRsvMJ2LpVkH4E64/CGet2gCw=
 github.com/go-numerics/optimize v0.2.0 h1:7OO7HlQBCzT4hIMsgmI7T1PQveUwoQJ70xBP84aN7dc=
