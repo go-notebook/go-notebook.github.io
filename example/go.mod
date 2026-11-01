@@ -4,14 +4,15 @@ go 1.27.3
 
 tool github.com/go-notebook/notebook/cmd/notebook
 
-require github.com/go-ndarray/ndarray v0.28.0
+require github.com/go-ndarray/ndarray v0.32.0
 
 require (
-	github.com/go-embedded-julia/julia v0.2.0 // indirect
-	github.com/go-notebook/notebook v0.6.0 // indirect
-	github.com/go-opentype/opentype v0.13.0 // indirect
+	github.com/andybalholm/brotli v1.2.7 // indirect
+	github.com/go-embedded-julia/julia v0.5.0 // indirect
+	github.com/go-notebook/notebook v0.6.1 // indirect
+	github.com/go-opentype/opentype v0.16.1 // indirect
 	github.com/go-regexp/engine v0.3.2 // indirect
-	github.com/go-rouge/rouge v0.7.0 // indirect
+	github.com/go-rouge/rouge v0.7.1 // indirect
 	github.com/go-ruby-irb/irb v0.1.0 // indirect
 	github.com/go-ruby-parser/parser v0.13.1 // indirect
 	github.com/go-ruby-regexp/regexp v0.1.1 // indirect
@@ -20,11 +21,11 @@ require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/spf13/cobra v1.10.2 // indirect
 	github.com/spf13/pflag v1.0.10 // indirect
-	github.com/yuin/goldmark v1.8.6 // indirect
+	github.com/yuin/goldmark v1.8.7 // indirect
 	golang.org/x/mod v0.42.0 // indirect
 	golang.org/x/sync v0.24.0 // indirect
 	golang.org/x/sys v0.49.0 // indirect
 	golang.org/x/term v0.47.0 // indirect
-	golang.org/x/text v0.42.0 // indirect
+	golang.org/x/text v0.43.0 // indirect
 	golang.org/x/tools v0.52.0 // indirect
 )
