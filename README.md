@@ -16,7 +16,9 @@ and the fleet's [landing kit](https://github.com/go-fleettools/landingkit)
   Each cell carries a Go or Ruby badge read from its fence (v0.4.0); cells can
   be added, edited, run one at a time, switched between Go, Ruby, Julia and
   Markdown, deleted with undo and moved, with Jupyter's keys (v0.6.0). R cells
-  are parsed and checked, not run, with the `5-r` example (v0.9.0); the
+  are parsed and checked in the browser, not run, with the `5-r` example
+  (v0.9.0): the CLI kernel has run them since go-notebook v0.10.0, but the
+  WebAssembly cores do not link the evaluator; the
   default core no longer carries the Julia and R parsers (v0.10.0).
 - **The hero** is the kit's carousel: the README's notebook
   (`layouts/partials/hero-terminal.html`), a notebook with a Ruby cell and
