@@ -8,18 +8,20 @@ require github.com/go-ndarray/ndarray v0.34.0
 
 require (
 	github.com/andybalholm/brotli v1.2.7 // indirect
+	github.com/go-embedded-c/c v0.2.0 // indirect
 	github.com/go-embedded-julia/julia v0.5.0 // indirect
-	github.com/go-embedded-r/r v0.1.0 // indirect
-	github.com/go-notebook/notebook v0.9.0 // indirect
+	github.com/go-embedded-r/r v0.4.0 // indirect
+	github.com/go-notebook/notebook v0.12.0 // indirect
 	github.com/go-opentype/opentype v0.16.1 // indirect
 	github.com/go-regexp/engine v0.3.2 // indirect
-	github.com/go-rouge/rouge v0.7.1 // indirect
+	github.com/go-rouge/rouge v0.8.1 // indirect
 	github.com/go-ruby-irb/irb v0.1.0 // indirect
 	github.com/go-ruby-parser/parser v0.13.1 // indirect
 	github.com/go-ruby-regexp/regexp v0.1.1 // indirect
 	github.com/go-ruby-reline/reline v0.1.0 // indirect
 	github.com/go-tex/math v0.50.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
 	github.com/spf13/cobra v1.10.2 // indirect
 	github.com/spf13/pflag v1.0.10 // indirect
 	github.com/yuin/goldmark v1.8.7 // indirect
@@ -29,4 +31,9 @@ require (
 	golang.org/x/term v0.47.0 // indirect
 	golang.org/x/text v0.43.0 // indirect
 	golang.org/x/tools v0.52.0 // indirect
+	modernc.org/mathutil v1.7.1 // indirect
+	modernc.org/opt v0.2.0 // indirect
+	modernc.org/sortutil v1.2.1 // indirect
+	modernc.org/strutil v1.2.1 // indirect
+	modernc.org/token v1.1.0 // indirect
 )
