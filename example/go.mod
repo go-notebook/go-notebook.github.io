@@ -4,21 +4,22 @@ go 1.27.3
 
 tool github.com/go-notebook/notebook/cmd/notebook
 
-require github.com/go-ndarray/ndarray v0.34.0
+require github.com/go-ndarray/ndarray v0.41.0
 
 require (
 	github.com/andybalholm/brotli v1.2.7 // indirect
-	github.com/go-embedded-c/c v0.2.0 // indirect
+	github.com/go-embedded-c/c v0.2.1 // indirect
 	github.com/go-embedded-julia/julia v0.5.0 // indirect
-	github.com/go-embedded-r/r v0.4.0 // indirect
-	github.com/go-notebook/notebook v0.12.0 // indirect
+	github.com/go-embedded-r/r v0.13.1 // indirect
+	github.com/go-notebook/notebook v0.14.0 // indirect
 	github.com/go-opentype/opentype v0.16.1 // indirect
-	github.com/go-regexp/engine v0.3.2 // indirect
-	github.com/go-rouge/rouge v0.8.1 // indirect
+	github.com/go-regexp/engine v0.4.2 // indirect
+	github.com/go-rouge/rouge v0.9.0 // indirect
 	github.com/go-ruby-irb/irb v0.1.0 // indirect
 	github.com/go-ruby-parser/parser v0.13.1 // indirect
-	github.com/go-ruby-regexp/regexp v0.1.1 // indirect
+	github.com/go-ruby-regexp/regexp v0.2.1 // indirect
 	github.com/go-ruby-reline/reline v0.1.0 // indirect
+	github.com/go-simd/floats v0.17.0 // indirect
 	github.com/go-tex/math v0.50.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
