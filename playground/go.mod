@@ -313,8 +313,11 @@ require (
 	github.com/go-widgets/painter v0.17.0 // indirect
 	github.com/go-widgets/textinput v0.1.1 // indirect
 	github.com/go-widgets/toolkit v0.374.3 // indirect
+	github.com/go-widgets/toolkit/rougelex v0.2.0 // indirect
 	github.com/go-widgets/tui v0.61.0 // indirect
 	github.com/go-widgets/vcs v0.1.0 // indirect
+	github.com/go-widgets/webcanvas v0.14.3 // indirect
+	github.com/go-widgets/window v0.93.0 // indirect
 	github.com/go-xslt/xslt v0.1.0 // indirect
 	github.com/go-zookeeper/zk v1.0.4 // indirect
 	github.com/goccy/go-json v0.10.6 // indirect
