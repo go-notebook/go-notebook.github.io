@@ -5,7 +5,7 @@ and the fleet's [landing kit](https://github.com/go-fleettools/landingkit)
 (a Hugo module pinned in `go.mod`).
 
 - **[/playground/](https://go-notebook.github.io/playground/)**: notebooks
-  in the browser, Go and Ruby cells, run in WebAssembly with no server. The
+  in the browser, Go, Ruby and R cells, run in WebAssembly with no server. The
   deploy workflow builds it with
   [go-notebook/playground](https://github.com/go-notebook/playground)'s
   `cmd/build`, at the version `playground/go.mod` pins, from the notebooks in
