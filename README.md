@@ -19,7 +19,9 @@ and the fleet's [landing kit](https://github.com/go-fleettools/landingkit)
   are parsed and checked in the browser, not run, with the `5-r` example
   (v0.9.0): the CLI kernel has run them since go-notebook v0.10.0, but the
   WebAssembly cores do not link the evaluator; the
-  default core no longer carries the Julia and R parsers (v0.10.0).
+  default core no longer carries the Julia and R parsers (v0.10.0). C cells
+  are parsed and checked the same way, with the `6-c` example, once the
+  `playground/go.mod` pin is a playground release that has them.
 - **The hero** is the kit's carousel: the README's notebook
   (`layouts/partials/hero-terminal.html`), a notebook with a Ruby cell and
   what it printed (`hero-terminal-ruby.html`), and the playground.
