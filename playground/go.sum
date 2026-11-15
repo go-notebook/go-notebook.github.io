@@ -267,8 +267,8 @@ github.com/go-nokogiri/nokogiri v0.1.0 h1:3Q3BewGHK16Bt34ggJeyf9xeIMJyA3dmfbIxAR
 github.com/go-nokogiri/nokogiri v0.1.0/go.mod h1:zjghooYIK8Xfg+fL4/OUhROslx51xGsM3JKtB2TI0tg=
 github.com/go-notebook/notebook v0.18.0 h1:D+dUbO7UGntilJgKy0RSe4c8lSM/29L5ATJsGh3vlaQ=
 github.com/go-notebook/notebook v0.18.0/go.mod h1:uGGg7forGdvyhc3ohmknC/1mNf3FD7JkEmwj3yAx4s0=
-github.com/go-notebook/playground v0.15.0 h1:298KCfPMBsOrpyJvu1OCILN010+snjfCF80MtWrNHAg=
-github.com/go-notebook/playground v0.15.0/go.mod h1:n9jKYN6FtJjfP8llbctGgJaHtTykQf4uB+kge7IYyCA=
+github.com/go-notebook/playground v0.16.0 h1:XewbwFXAxR/HPvdT6o/gK8Xp+SLVabqz2gI8sf+9fis=
+github.com/go-notebook/playground v0.16.0/go.mod h1:n9jKYN6FtJjfP8llbctGgJaHtTykQf4uB+kge7IYyCA=
 github.com/go-numerics/integrate v0.2.0 h1:IkJhDimTc7nQETCixEvbbHhtOF36GbANBKJI3mJB3Kw=
 github.com/go-numerics/integrate v0.2.0/go.mod h1:ABjpcWy8ZSOg8j6S+7YRsvMJ2LpVkH4E64/CGet2gCw=
 github.com/go-numerics/optimize v0.3.1 h1:eYkT9BpORKSwXnDtEJxXfZ19qJT0cI2RH6xEL3VLZSU=
