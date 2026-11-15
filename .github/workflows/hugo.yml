@@ -71,7 +71,10 @@ jobs:
             --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       # The playground: the page, its example notebooks and the WebAssembly
-      # cores (Go, and Go with Ruby), built here from the
+      # cores (Go; Go with Ruby, R and Fortran; and that with Julia, with its
+      # compressed Base image, which the page fetches only when a Julia cell is
+      # run: cmd/build writes them all into the output directory, so everything
+      # in ../public/playground is served), built here from the
       # go-notebook/playground version that playground/go.mod pins (never a
       # committed binary). The build runs every notebook first and fails if a
       # cell fails.
