@@ -2,7 +2,7 @@ module github.com/go-notebook/go-notebook.github.io/playground
 
 go 1.27.3
 
-require github.com/go-notebook/playground v0.14.0
+require github.com/go-notebook/playground v0.15.0
 
 require (
 	filippo.io/age v1.3.2 // indirect
@@ -80,13 +80,14 @@ require (
 	github.com/go-dataframe/dataframe v0.1.0 // indirect
 	github.com/go-datetime/dates v0.2.0 // indirect
 	github.com/go-embedded-c/c v0.2.1 // indirect
-	github.com/go-embedded-julia/julia v0.5.0 // indirect
-	github.com/go-embedded-r/r v0.13.1 // indirect
+	github.com/go-embedded-fortran/fortran v0.17.0 // indirect
+	github.com/go-embedded-julia/julia v0.15.0 // indirect
+	github.com/go-embedded-r/r v0.17.1 // indirect
 	github.com/go-embedded-r/tre v0.1.3 // indirect
 	github.com/go-embedded-ruby/ruby v0.8.5 // indirect
 	github.com/go-encryptions/unixcrypt v0.1.0 // indirect
 	github.com/go-facter/facter v0.0.0-20260830120958-454b72e642ab // indirect
-	github.com/go-fft/fft v0.28.6 // indirect
+	github.com/go-fft/fft v0.28.11 // indirect
 	github.com/go-fleettools/landingkit v0.18.0 // indirect
 	github.com/go-gfx/gfx v0.41.0 // indirect
 	github.com/go-hiera/hiera v0.0.0-20260830144306-f9304f6bec92 // indirect
@@ -104,9 +105,9 @@ require (
 	github.com/go-logr/logr v1.4.4 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-mustache/mustache v0.1.0 // indirect
-	github.com/go-ndarray/ndarray v0.28.0 // indirect
+	github.com/go-ndarray/ndarray v0.40.3 // indirect
 	github.com/go-nokogiri/nokogiri v0.1.0 // indirect
-	github.com/go-notebook/notebook v0.15.0 // indirect
+	github.com/go-notebook/notebook v0.18.0 // indirect
 	github.com/go-numerics/integrate v0.2.0 // indirect
 	github.com/go-numerics/optimize v0.3.1 // indirect
 	github.com/go-numerics/special v0.2.0 // indirect
@@ -302,6 +303,7 @@ require (
 	github.com/go-simd/adler32 v0.1.0 // indirect
 	github.com/go-simd/base64 v0.1.0 // indirect
 	github.com/go-simd/crc32 v0.0.0-20260903220012-5f164e0e0487 // indirect
+	github.com/go-simd/floats v0.15.0 // indirect
 	github.com/go-simd/hex v0.0.0-20260903220024-a8d22a843218 // indirect
 	github.com/go-simd/highway v0.0.14 // indirect
 	github.com/go-sql-driver/mysql v1.10.1 // indirect
@@ -409,10 +411,10 @@ require (
 	golang.org/x/exp v0.0.0-20260218203240-3dfff04db8fa // indirect
 	golang.org/x/image v0.47.0 // indirect
 	golang.org/x/net v0.62.0 // indirect
-	golang.org/x/sync v0.24.0 // indirect
+	golang.org/x/sync v0.25.0 // indirect
 	golang.org/x/sys v0.49.0 // indirect
 	golang.org/x/term v0.47.0 // indirect
-	golang.org/x/text v0.43.0 // indirect
+	golang.org/x/text v0.44.0 // indirect
 	golang.org/x/time v0.16.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20260817212433-ac3dfec99bb1 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260817212433-ac3dfec99bb1 // indirect
