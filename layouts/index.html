@@ -21,10 +21,9 @@
     <div>
       <h1 class="head">Go notebooks, compiled and reactive.<br><span class="accent">Native speed, kept values, a reproducible order.</span></h1>
       <p class="sub">A <b>notebook is a Markdown file</b> whose <code>```go</code> blocks are cells. The kernel <b>compiles it</b> into a real Go program, <b>orders the cells by what they use</b> — worked out from the code itself, as marimo does for Python, not from the order you ran them in — and <b>runs only what changed</b>. A cell whose code and inputs did not change keeps its result, and its values are handed over instead of being computed again, across rebuilds and across runs.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="https://go-notebook.github.io/docs/">{{ partial "icons/book.html" . }}Read the documentation →</a>
-        <a class="btn btn-try" href="/playground/">{{ partial "icons/browser.html" . }}Try it in your browser</a>
-      </div>
+      {{/* [[params.cta]] in hugo.toml: the kit renders the row (docs, then the
+           red btn-try with its icon). */}}
+      {{ partial "cta.html" . }}
       <div class="trust"><span><b>{{ len .Site.Params.rules }}</b> cell rules, checked from the syntax</span><span><b>.md</b> diffs are diffs of text</span><span><b>100%</b> test coverage</span></div>
     </div>
     {{/* The hero's cards, [params.hero] in hugo.toml: the README's notebook

@@ -18,6 +18,24 @@ disableKinds = ['taxonomy', 'term', 'rss', 'sitemap', '404']
 [params]
   description = "go-notebook: Go notebooks with native speed, kept values and a reproducible order. A notebook is a Markdown file whose go blocks (and ruby blocks, on a pure-Go Ruby) are cells; the kernel compiles it, orders the cells by what they use, and runs only what changed."
 
+# The strip under the top bar: the kit's two chips (CGO_ENABLED=0, then the
+# licence) and, under them, "Tested on": only the architectures CI RUNS the
+# tests on. notebook and playground ci.yml: amd64 (ubuntu, windows), arm64
+# (macos, ubuntu-arm) and riscv64, loong64, ppc64le, s390x under qemu. Targets
+# that are only cross-compiled (386, arm, mips...) are not listed.
+[params.mantra]
+  goarch = ["amd64", "arm64", "riscv64", "loong64", "ppc64le", "s390x"]
+
+# The hero's buttons, rendered by landingkit's cta.html in the kit's order.
+[[params.cta]]
+  kind  = "docs"
+  href  = "https://go-notebook.github.io/docs/"
+  label = "Read the documentation →"
+[[params.cta]]
+  kind  = "try"
+  href  = "/playground/"
+  label = "Try it in your browser"
+
 # The hero's carousel (the landing kit's hero-carousel.html). The first card
 # is layouts/partials/hero-terminal.html, the second hero-terminal-ruby.html:
 # example/waits.md and what running it printed, checked by the ci workflow.
