@@ -15,7 +15,7 @@ xs = [i^2 for i in 1:3]
 total = sum(xs)
 ```
 
-Julia variables stay in Julia (they are not shared with Go cells, in either direction), so a cell of another language neither reads `total` nor waits for it. It runs as usual, whatever the Julia cells above it do:
+In go-notebook itself, Julia variables cross to and from Go cells (Int64, Float64, Bool, String, and vectors and matrices of Float64 or Int64). Here the Julia cell is only checked, so a cell that reads no Julia name neither reads `total` nor waits for it. It runs as usual, whatever the Julia cells above it do:
 
 ```go
 n * 2
