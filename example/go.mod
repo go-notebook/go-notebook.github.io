@@ -1,6 +1,6 @@
 module github.com/go-notebook/go-notebook.github.io/example
 
-go 1.27.3
+go 1.27.4
 
 tool github.com/go-notebook/notebook/cmd/notebook
 
