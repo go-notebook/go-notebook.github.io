@@ -2,7 +2,7 @@ module github.com/go-notebook/go-notebook.github.io/playground
 
 go 1.27.4
 
-require github.com/go-notebook/playground v0.18.0
+require github.com/go-notebook/playground v0.19.0
 
 require (
 	filippo.io/age v1.3.2 // indirect
@@ -81,7 +81,7 @@ require (
 	github.com/go-dataframe/dataframe v0.1.0 // indirect
 	github.com/go-datetime/dates v0.2.0 // indirect
 	github.com/go-embedded-c/c v0.2.1 // indirect
-	github.com/go-embedded-fortran/fortran v0.24.1 // indirect
+	github.com/go-embedded-fortran/fortran v0.30.0 // indirect
 	github.com/go-embedded-julia/julia v0.17.0 // indirect
 	github.com/go-embedded-r/r v0.17.1 // indirect
 	github.com/go-embedded-r/tre v0.1.3 // indirect
