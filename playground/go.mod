@@ -2,7 +2,7 @@ module github.com/go-notebook/go-notebook.github.io/playground
 
 go 1.27.4
 
-require github.com/go-notebook/playground v0.20.0
+require github.com/go-notebook/playground v0.21.0
 
 require (
 	filippo.io/age v1.3.2 // indirect
@@ -83,7 +83,7 @@ require (
 	github.com/go-datetime/dates v0.2.0 // indirect
 	github.com/go-embedded-c/c v0.2.1 // indirect
 	github.com/go-embedded-fortran/fortran v0.30.0 // indirect
-	github.com/go-embedded-julia/julia v0.18.0 // indirect
+	github.com/go-embedded-julia/julia v0.20.0 // indirect
 	github.com/go-embedded-r/r v0.17.1 // indirect
 	github.com/go-embedded-r/tre v0.1.3 // indirect
 	github.com/go-embedded-ruby/ruby v0.8.5 // indirect
@@ -109,7 +109,7 @@ require (
 	github.com/go-mustache/mustache v0.1.0 // indirect
 	github.com/go-ndarray/ndarray v0.40.3 // indirect
 	github.com/go-nokogiri/nokogiri v0.1.0 // indirect
-	github.com/go-notebook/notebook v0.21.0 // indirect
+	github.com/go-notebook/notebook v0.21.2 // indirect
 	github.com/go-numerics/integrate v0.2.0 // indirect
 	github.com/go-numerics/optimize v0.3.1 // indirect
 	github.com/go-numerics/special v0.2.0 // indirect
